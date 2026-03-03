@@ -1,0 +1,129 @@
+﻿Calling Llama (Testing 10 MCQs)...
+node : Llama Invocation 
+Error:
+At line:1 char:1
++ node testLlama.js > 
+result.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~
+    + CategoryInfo         
+     : NotSpecified: (Lla  
+  ma Invocation Error::S   
+ tring) [], RemoteExcep    
+tion
+    + FullyQualifiedErrorI 
+   d : NativeCommandError
+ 
+Error: Region is missing
+    at default 
+(E:\projects\NeuroSpark AI\
+backend\node_modules\@smith
+y\config-resolver\dist-cjs\
+index.js:70:15)
+    at 
+E:\projects\NeuroSpark AI\b
+ackend\node_modules\@smithy
+\node-config-provider\dist-
+cjs\index.js:54:83
+    at 
+E:\projects\NeuroSpark AI\b
+ackend\node_modules\@smithy
+\property-provider\dist-cjs
+\index.js:50:39
+    at async 
+coalesceProvider 
+(E:\projects\NeuroSpark AI\
+backend\node_modules\@smith
+y\property-provider\dist-cj
+s\index.js:76:24)
+    at async 
+E:\projects\NeuroSpark AI\b
+ackend\node_modules\@smithy
+\property-provider\dist-cjs
+\index.js:88:28
+    at async region 
+(E:\projects\NeuroSpark AI\
+backend\node_modules\@smith
+y\config-resolver\dist-cjs\
+index.js:107:67)
+    at async Object.default
+BedrockRuntimeHttpAuthSchem
+eParametersProvider [as htt
+pAuthSchemeParametersProvid
+er] 
+(E:\projects\NeuroSpark AI\
+backend\node_modules\@aws-s
+dk\client-bedrock-runtime\d
+ist-cjs\auth\httpAuthScheme
+Provider.js:10:17)
+    at async 
+E:\projects\NeuroSpark AI\b
+ackend\node_modules\@smithy
+\core\dist-cjs\index.js:40:
+51
+    at async 
+E:\projects\NeuroSpark AI\b
+ackend\node_modules\@aws-sd
+k\middleware-logger\dist-cj
+s\index.js:5:26
+    at async callLlama 
+(E:\projects\NeuroSpark AI\
+backend\utils\bedrock.js:22
+:22)
+FAILED: Error: Region is 
+missing
+    at default 
+(E:\projects\NeuroSpark AI\
+backend\node_modules\@smith
+y\config-resolver\dist-cjs\
+index.js:70:15)
+    at 
+E:\projects\NeuroSpark AI\b
+ackend\node_modules\@smithy
+\node-config-provider\dist-
+cjs\index.js:54:83
+    at 
+E:\projects\NeuroSpark AI\b
+ackend\node_modules\@smithy
+\property-provider\dist-cjs
+\index.js:50:39
+    at async 
+coalesceProvider 
+(E:\projects\NeuroSpark AI\
+backend\node_modules\@smith
+y\property-provider\dist-cj
+s\index.js:76:24)
+    at async 
+E:\projects\NeuroSpark AI\b
+ackend\node_modules\@smithy
+\property-provider\dist-cjs
+\index.js:88:28
+    at async region 
+(E:\projects\NeuroSpark AI\
+backend\node_modules\@smith
+y\config-resolver\dist-cjs\
+index.js:107:67)
+    at async Object.default
+BedrockRuntimeHttpAuthSchem
+eParametersProvider [as htt
+pAuthSchemeParametersProvid
+er] 
+(E:\projects\NeuroSpark AI\
+backend\node_modules\@aws-s
+dk\client-bedrock-runtime\d
+ist-cjs\auth\httpAuthScheme
+Provider.js:10:17)
+    at async 
+E:\projects\NeuroSpark AI\b
+ackend\node_modules\@smithy
+\core\dist-cjs\index.js:40:
+51
+    at async 
+E:\projects\NeuroSpark AI\b
+ackend\node_modules\@aws-sd
+k\middleware-logger\dist-cj
+s\index.js:5:26
+    at async callLlama 
+(E:\projects\NeuroSpark AI\
+backend\utils\bedrock.js:22
+:22)
