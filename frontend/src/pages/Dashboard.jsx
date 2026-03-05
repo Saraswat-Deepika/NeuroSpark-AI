@@ -24,13 +24,17 @@ function Dashboard() {
   };
 
   useEffect(() => {
-    fetchProgress();
+    fetchData();
   }, []);
 
-  const fetchProgress = async () => {
+  const fetchData = async () => {
     try {
-      const res = await API.get("/learning/dashboard");
-      setProgressData(res.data);
+      const [userRes, progressRes] = await Promise.all([
+        API.get("/auth/me").catch(() => ({ data: null })), // Don't crash if unauthenticated
+        API.get("/learning/dashboard")
+      ]);
+      setUser(userRes.data);
+      setProgressData(progressRes.data);
     } catch (err) {
       console.error(err);
     }
@@ -41,7 +45,6 @@ function Dashboard() {
     navigate("/diagnostic", { state: { topic } });
   };
 
-  // Group progress by topic
   const grouped = progressData.reduce((acc, item) => {
     if (!acc[item.topic]) acc[item.topic] = [];
     acc[item.topic].push(item);

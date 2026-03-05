@@ -22,18 +22,20 @@ const styles = `
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #b8d0ff 0%, #d4b8f0 50%, #f0b8d4 100%);
-    font-family: 'DM Sans', sans-serif;
+    background: linear-gradient(135deg, #050811 0%, #0A0E1A 100%);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     padding: 20px;
   }
 
   .auth-card {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 28px;
     padding: 42px 38px;
     width: 100%;
     max-width: 420px;
-    box-shadow: 0 24px 64px rgba(80,60,180,0.16), 0 4px 16px rgba(0,0,0,0.06);
+    box-shadow: 0 25px 50px rgba(4, 86, 172, 0.2);
     animation: slideUp 0.45s cubic-bezier(0.22,1,0.36,1);
   }
 
@@ -43,25 +45,29 @@ const styles = `
   }
 
   .auth-title {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 24px;
     font-weight: 700;
-    color: #12122a;
+    color: #FCFEFC;
     text-align: center;
     margin-bottom: 6px;
     letter-spacing: -0.4px;
+    background: linear-gradient(135deg, #FCFEFC 0%, #0A7AE8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .auth-subtitle {
     text-align: center;
     font-size: 13.5px;
-    color: #9095b8;
+    color: #64748B;
     margin-bottom: 26px;
   }
 
   .tab-row {
     display: flex;
-    background: #f1f3fb;
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 14px;
     padding: 4px;
     margin-bottom: 28px;
@@ -73,19 +79,19 @@ const styles = `
     padding: 11px 0;
     border: none;
     border-radius: 11px;
-    font-family: 'Sora', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.28s cubic-bezier(0.22,1,0.36,1);
     background: transparent;
-    color: #9095b8;
+    color: #64748B;
   }
 
   .tab-btn.active {
-    background: #2a5cdb;
-    color: #fff;
-    box-shadow: 0 4px 16px rgba(42,92,219,0.32);
+    background: rgba(4, 86, 172, 0.8);
+    color: #FCFEFC;
+    box-shadow: 0 4px 16px rgba(4, 86, 172, 0.32);
   }
 
   .form-group { margin-bottom: 14px; }
@@ -94,7 +100,7 @@ const styles = `
     display: block;
     font-size: 12px;
     font-weight: 500;
-    color: #6b6f8e;
+    color: #94A3B8;
     margin-bottom: 6px;
     letter-spacing: 0.3px;
     text-transform: uppercase;
@@ -105,22 +111,22 @@ const styles = `
   .form-input {
     width: 100%;
     padding: 13px 16px;
-    border: 1.5px solid #e4e7f5;
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 14.5px;
-    color: #12122a;
-    background: #fafbff;
+    color: #FCFEFC;
+    background: rgba(255, 255, 255, 0.05);
     outline: none;
     transition: border-color 0.22s, box-shadow 0.22s, background 0.22s;
   }
 
-  .form-input::placeholder { color: #c0c5de; }
+  .form-input::placeholder { color: rgba(255, 255, 255, 0.3); }
 
   .form-input:focus {
-    border-color: #2a5cdb;
-    background: #fff;
-    box-shadow: 0 0 0 4px rgba(42,92,219,0.09);
+    border-color: #0A7AE8;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 4px rgba(10, 122, 232, 0.1);
   }
 
   .eye-btn {
@@ -131,24 +137,24 @@ const styles = `
     background: none;
     border: none;
     cursor: pointer;
-    color: #c0c5de;
+    color: rgba(255, 255, 255, 0.4);
     padding: 0;
     display: flex;
     align-items: center;
     transition: color 0.2s;
   }
-  .eye-btn:hover { color: #2a5cdb; }
+  .eye-btn:hover { color: #0A7AE8; }
 
   .forgot-row { text-align: right; margin-top: 6px; margin-bottom: 20px; }
 
   .forgot-link {
     font-size: 13px;
-    color: #2a5cdb;
+    color: #0A7AE8;
     font-weight: 500;
     cursor: pointer;
     background: none;
     border: none;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     padding: 0;
   }
   .forgot-link:hover { text-decoration: underline; }
@@ -156,21 +162,21 @@ const styles = `
   .submit-btn {
     width: 100%;
     padding: 14px;
-    background: linear-gradient(135deg, #3a6cf4 0%, #1a3faa 100%);
-    color: #fff;
+    background: linear-gradient(135deg, #0456AC 0%, #0A7AE8 100%);
+    color: #FCFEFC;
     border: none;
     border-radius: 13px;
-    font-family: 'Sora', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.24s ease;
-    box-shadow: 0 4px 18px rgba(42,92,219,0.28);
+    box-shadow: 0 4px 18px rgba(4, 86, 172, 0.28);
     margin-bottom: 16px;
     margin-top: 6px;
   }
 
-  .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(42,92,219,0.38); }
+  .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(4, 86, 172, 0.4); }
   .submit-btn:active { transform: translateY(0); }
 
   .divider {
@@ -178,15 +184,15 @@ const styles = `
     align-items: center;
     gap: 10px;
     margin: 16px 0;
-    color: #c0c5dc;
+    color: #64748B;
     font-size: 12px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
   .divider::before, .divider::after {
     content: '';
     flex: 1;
     height: 1px;
-    background: #e8eaf4;
+    background: rgba(255, 255, 255, 0.1);
   }
 
   .google-wrap {
@@ -195,16 +201,16 @@ const styles = `
     margin-bottom: 20px;
   }
 
-  .bottom-text { text-align: center; font-size: 13.5px; color: #7a7fa8; }
+  .bottom-text { text-align: center; font-size: 13.5px; color: #64748B; }
 
   .bottom-link {
-    color: #2a5cdb;
+    color: #0A7AE8;
     font-weight: 600;
     cursor: pointer;
     background: none;
     border: none;
     font-size: 13.5px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     padding: 0;
   }
   .bottom-link:hover { text-decoration: underline; }
@@ -213,14 +219,14 @@ const styles = `
 function EyeIcon({ open }) {
   return open ? (
     <svg width="17" height="17" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-      <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/>
-      <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
-      <line x1="1" y1="1" x2="23" y2="23"/>
+      <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94" />
+      <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19" />
+      <line x1="1" y1="1" x2="23" y2="23" />
     </svg>
   ) : (
     <svg width="17" height="17" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-      <circle cx="12" cy="12" r="3"/>
+      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+      <circle cx="12" cy="12" r="3" />
     </svg>
   );
 }
