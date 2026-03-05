@@ -61,7 +61,18 @@ function extractJSON(output) {
   // Fix common Llama JSON hallucination issues (unescaped newlines)
   jsonString = jsonString.replace(/\n/g, " ").replace(/\r/g, "");
 
-  return JSON.parse(jsonString);
+  // Try parsing safely, and use an eval-based fallback if it crashes due to keys missing quotes, or quotes missing inside strings
+  try {
+    return JSON.parse(jsonString);
+  } catch (err) {
+    try {
+      // Create a sandbox execution of object extraction if strict JSON fails (e.g. LLM provides ' "A": (2/3, 1/3) ' without quotes or invalid formatting
+      const evalSafe = new Function("return " + jsonString + ";");
+      return evalSafe();
+    } catch (err2) {
+      throw new Error("Invalid format received from AI.");
+    }
+  }
 }
 
 /* =====================================================

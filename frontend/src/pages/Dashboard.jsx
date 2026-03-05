@@ -11,6 +11,7 @@ function Dashboard() {
   const [progressData, setProgressData] = useState([]);
   const [selectedTopic, setSelectedTopic] = useState(null);
   const [hoveredCard, setHoveredCard] = useState(null);
+  const [user, setUser] = useState(null);
 
   const COLORS = {
     primary: "#0456AC",      // Deep Royal Blue
@@ -112,7 +113,7 @@ function Dashboard() {
             WebkitTextFillColor: "transparent",
             backgroundClip: "text"
           }}>
-            Learning Dashboard
+            {user?.name ? `Welcome back, ${user.name.split(' ')[0]}! 👋` : 'Learning Dashboard'}
           </h1>
           <p style={{ color: COLORS.gray, margin: 0, fontSize: "1.1rem" }}>
             Track your progress and master new topics
